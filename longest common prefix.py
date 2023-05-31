@@ -4,10 +4,10 @@ class Solution(object):
         :type strs: List[str]
         :rtype: str
         """
-        prefix_list = []
-
+        prefix = ""
         for i in range(len(strs[0])):
-            if strs[0][i] == strs[1][i] and strs[0][i] == strs[2][i]:
-                prefix_list.append(strs[0][i])
-
-        return(prefix_list)
+            for word in strs:
+                if len(word) == i or word[i] != strs[0][i]:
+                    return prefix
+            prefix += strs[0][i]
+        return prefix
