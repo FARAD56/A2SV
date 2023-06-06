@@ -29,7 +29,12 @@ class Solution(object):
                 
 
             min_value = min(enumerate(man_list), key=lambda x: x[1])
-            min_index = min_value[0]
+            min_index = -1
+            min_value = float('inf')
+            for index , value in enumerate(man_list):
+                if value < min_value:
+                    min_value = value
+                    min_index = index
 
             ans = track[min_index]
             return ans
