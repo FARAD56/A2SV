@@ -12,6 +12,11 @@ array.pop(0)
 zeros = [num for num in array if num == 0]
 
 positives = [num for num in array if num != 0]
+neg = [num for num in array if num < 0]
+
+if len(neg) % 2 != 0:
+    zeros.append(positives[0])
+    positives.pop(0)
 
 # Print the sets
 print(1, negatives)
