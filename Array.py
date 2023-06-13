@@ -1,6 +1,19 @@
-N = int (input())
-array = '-1 -2 0'.split()
-total_array = []
+n = int(input())  # Number of elements in the array
+array = list(map(int, input().split())) 
+array.sort()
 
-array = [int(item) for item in array]
-print(array)
+positives = []  # Set for positive numbers
+zeros = []  # Set for zeros
+
+# Divide the array into three sets
+negatives = array[0]
+array.pop(0)
+
+zeros = [num for num in array if num == 0]
+
+positives = [num for num in array if num != 0]
+
+# Print the sets
+print(1, negatives)
+print(len(positives), *positives)
+print(len(zeros), *zeros)
