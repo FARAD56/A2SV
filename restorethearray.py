@@ -9,7 +9,7 @@ for _ in range(t):
     a[0] = b[0]
     a[-1] = b[-1]
     # Set the elements of a based on the differences in b
-    for i in range(n-1):
+    for i in range(1,n-1):
         a[i] = min(b[i-1],b[i])
  
     # Print the elements of array a
