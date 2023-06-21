@@ -15,13 +15,13 @@ for i in range(t):
                 left_minimum,idx = min(line[i],line[i-1]),line.index(min(line[i],line[i-1]))
                 left_maximum = max(line[i],line[i-1])
                 back_mod = left_maximum % left_minimum
-                print('back_mod',back_mod,left_minimum)
+                # print('back_mod',back_mod,left_minimum)
                 left_minimum += back_mod
 
                 right_minimum,idx2 = min(line[i+1],line[i]),line.index(min(line[i+1],line[i]))
                 right_maximum = max(line[i+1],line[i])
                 front_mod = right_maximum % right_minimum
-                print('front_mod',front_mod,right_minimum)
+                # print('front_mod',front_mod,right_minimum)
                 right_minimum += front_mod
 
                 line[idx] = left_minimum
@@ -33,10 +33,8 @@ for i in range(t):
         left_maximum1 = max(line[0], line[-1])
         last_mod = left_maximum1 % left_minimum1
         left_minimum1 += last_mod
-        print('last_mod',last_mod,left_minimum1)
+        # print('last_mod',last_mod,left_minimum1)
         line[idx3] = left_minimum1
-
-        print(*line)
 
         if track == 0:
             not_good = False
