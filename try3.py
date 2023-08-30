@@ -1,22 +1,19 @@
-def solve(arr,mx,mx2):
-    results=[]
-    for x in range(0,len(arr)):
-        if arr[x]==mx:
-            results.append(arr[x]-mx2)
-            print(results)
-        else:
-            results.append(arr[x]-mx)
-        return results
+t = int(input())
 
-t=int(input())
+for i in range(t):
+    n = int(input())
+    
+    def check(n):
+        if n < 9 and n != 2:
+            return "NO"
+        elif n==2:
+            return "YES"
+        for i in range(1,int(pow(n,0.5))):
+            if n-(i**3) >= 0:
+                if pow(n-(i**3),1/3) == float(pow(n-(i**3),1/3)):
+                    if abs(int(pow(n-(i**3),1/3))) - pow(n-(i**3),1/3) < (1/10000000000):
+                        return "YES"
+        return "NO" 
 
-for _ in range(t):
-    n=int(input())
-    array =list(map(int,input().split()))
-    new_array =[num for num in array]
-    new_array.sort()
-    mx=new_array[n-1]
-    mx2=new_array[len(array)-2]
-    #print(mx,mx2)
-    print(*solve(array,mx,mx2))
-
+    
+    print(check(n))
