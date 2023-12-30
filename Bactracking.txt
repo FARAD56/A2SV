@@ -1,0 +1,12 @@
+- Exhaustive search (exploring everu possible using recursion)
+
+
+kinds of problems
+
+ - exploration problems (permutation)
+find all possible
+generate all possible
+find all subsets
+
+
+ - Optimization problems
