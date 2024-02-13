@@ -1,25 +1,22 @@
-from collections import deque
-start, end = map(int, input().split())
+''' 
+if even then you get only one move
+if odd, two moves
+start from end and decrease down while ensuring even
+'''
 
-if end <= start:
-    print(start-end)
-    exit()
 
-queue = deque([start])
-visited = set([start])
-count = 0
-while queue:
-    start = queue.popleft()
+n,m=map(int,input().split())
+s = 0
 
-    if end%start:
-        if (start-1) not in visited:
-            count += 1
-            queue.append(start-1)
-            visited.add(start-1)
-    elif end%start == 0 and end != start:
-        if (start*2) not in visited:
-            count += 1
-            queue.append(2*start)
-        
+while n<m:
+    if m%2 == 0:
+        s += 1
+    else:
+        m += 1
+        s += 2
+
+    m //= 2
+
     
-print(count)
+
+print(int(s+n-m))

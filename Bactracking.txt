@@ -7,6 +7,8 @@ kinds of problems
 find all possible
 generate all possible
 find all subsets
+explore
 
 
  - Optimization problems
+Choose the most optimal solutions
